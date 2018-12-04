@@ -1,4 +1,3 @@
-src/pages/about.js
 import React from "react"
 import Layout from "../components/layout"
 
