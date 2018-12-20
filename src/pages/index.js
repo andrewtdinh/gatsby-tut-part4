@@ -28,7 +28,7 @@ export default ({ data }) => {
               {node.frontmatter.title}{" "}
               <span
                 css={css`
-                  color: #BBB;
+                  color: #BBBBBB;
                 `}
               >
                 — {node.frontmatter.date}
@@ -44,7 +44,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
