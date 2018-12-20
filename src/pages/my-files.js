@@ -14,6 +14,7 @@ export default ({ data }) => {
               <th>Body</th>
               <th>File Path</th>
               <th>Time To Read</th>
+              <th>Word Count</th>
             </tr>
           </thead>
           <tbody>
@@ -22,6 +23,7 @@ export default ({ data }) => {
                 <td>{node.rawMarkdownBody}</td>
                 <td>{node.fileAbsolutePath}</td>
                 <td>{node.timeToRead}</td>
+                <td>{node.wordCount.words}</td>
               </tr>
             ))}
           </tbody>
@@ -39,6 +41,11 @@ export const query = graphql`
           rawMarkdownBody
           fileAbsolutePath
           timeToRead
+          wordCount {
+            paragraphs
+            sentences
+            words
+          }
         }
       }
     }
