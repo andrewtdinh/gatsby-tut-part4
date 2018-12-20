@@ -11,10 +11,9 @@ export default ({ data }) => {
         <table>
           <thead>
             <tr>
-              <th>relativePath</th>
-              <th>prettySize</th>
-              <th>extension</th>
-              <th>birthTime</th>
+              <th>Body</th>
+              <th>File Path</th>
+              <th>Time To Read</th>
             </tr>
           </thead>
           <tbody>
@@ -22,6 +21,7 @@ export default ({ data }) => {
               <tr key={index}>
                 <td>{node.rawMarkdownBody}</td>
                 <td>{node.fileAbsolutePath}</td>
+                <td>{node.timeToRead}</td>
               </tr>
             ))}
           </tbody>
@@ -38,6 +38,7 @@ export const query = graphql`
         node {
           rawMarkdownBody
           fileAbsolutePath
+          timeToRead
         }
       }
     }
