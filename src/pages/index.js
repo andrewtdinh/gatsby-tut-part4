@@ -28,7 +28,7 @@ export default ({ data }) => {
               {node.frontmatter.title}{" "}
               <span
                 css={css`
-                  color: #bbb;
+                  color: #BBB;
                 `}
               >
                 — {node.frontmatter.date}
