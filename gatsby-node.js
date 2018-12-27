@@ -11,3 +11,25 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 };
+
+exports.createPages = ({ graphql, actions }) => {
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+    ).then(result => {
+      console.log(JSON.stringify(result, null, 4))
+      resolve()
+    })
+  })
+}
